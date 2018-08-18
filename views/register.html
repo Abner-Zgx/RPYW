@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Kodinger">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>{{__ 'AZC'}}</title>
-	<link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/login.css">
+	<title>{{__ 'Company Name'}}</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-
 </head>
+
 <body class="my-login-page">
 	<section class="h-100">
 		<div class="container h-100">
@@ -20,51 +20,51 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Register</h4>
+							<h4 class="card-title text-center">{{__ 'Register'}}</h4>
 							<form method="POST">
 							 
 								<div class="form-group">
-									<label for="name">Name</label>
+									<label for="name">{{__ 'Name'}}</label>
 									<input id="name" type="text" class="form-control" name="name" required autofocus>
 								</div>
 
 								<div class="form-group">
-									<label for="email">E-Mail Address</label>
+									<label for="email">{{__ 'E-Mail Address'}}</label>
 									<input id="email" type="email" class="form-control" name="email" required>
 								</div>
 
 								<div class="form-group">
-									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<label for="password">{{__ 'Password'}}</label>
+									<input id="password" type="password" class="form-control" name="password" required>
 								</div>
 
 								<div class="form-group">
 									<label>
-										<input type="checkbox" name="aggree" value="1"> I agree to the Terms and Conditions
+										<input type="checkbox" name="aggree" value="1"> {{__ 'Terms and Conditions'}}
 									</label>
 								</div>
 
 								<div class="form-group no-margin">
 									<button type="submit" class="btn btn-primary btn-block">
-										Register
+										{{__ 'Register'}}
 									</button>
 								</div>
 								<div class="margin-top20 text-center">
-									Already have an account? <a href="index.html">Login</a>
+									{{__ 'Already have an account'}}? <a href="login">{{__ 'Login'}}</a>
 								</div>
 							</form>
 						</div>
 					</div>
 					<div class="footer">
-						Copyright &copy; 2017 &mdash; Your Company 
+						Copyright &copy; 2019 &mdash; {{__ 'Company Name'}}
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<script src="../public/js/jquery.min.js"></script>
-	<script src="../public/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../public/js/login.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/login.js"></script>
 </body>
 </html>

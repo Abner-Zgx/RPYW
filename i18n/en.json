@@ -6,5 +6,10 @@
     "Forgot Password": "Password",
     "Remember Me": "Remember Me",
     "No Account": "Don't have a account",
-    "Create One": "Create One"
+    "Create One": "Create One",
+    "Click Reset Password": "By clicking 'Reset Password' we will send a password reset link",
+    "Reset Password": "Reset Password",
+    "Register": "Register",
+    "Name": "Name",
+    "Terms and Conditions": "I agree to the Terms and Conditions"
 }

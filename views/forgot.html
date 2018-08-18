@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Kodinger">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>{{__ 'AZC'}}</title>
-	<link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/login.css">
+	<title>{{__ 'Company Name'}}</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-
 </head>
+
 <body class="my-login-page">
 	<section class="h-100">
 		<div class="container h-100">
@@ -20,31 +21,32 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Forgot Password</h4>
+							<h4 class="card-title text-center">{{__ 'Forgot Password'}}</h4>
 							<form method="POST">
-							 
+
 								<div class="form-group">
-									<label for="email">E-Mail Address</label>
+									<label for="email">{{__ 'E-Mail Address'}}</label>
 									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
 									<div class="form-text text-muted">
-										By clicking "Reset Password" we will send a password reset link
+										{{__ 'Click Reset Password'}}
 									</div>
 								</div>
 
 								<div class="form-group no-margin">
 									<button type="submit" class="btn btn-primary btn-block">
-										Reset Password
+										{{__ 'Reset Password'}}
 									</button>
 								</div>
 							</form>
 						</div>
 					</div>
 					<div class="footer">
-						Copyright &copy; 2017 &mdash; Your Company 
+						Copyright &copy; 2019 &mdash; {{__ 'Company Name'}}
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 </body>
+
 </html>
