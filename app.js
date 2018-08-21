@@ -2,6 +2,7 @@ const express = require('express');
 const i18n = require('i18n');
 const path = require('path');
 const exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
 
 var app = express();
 
@@ -30,7 +31,9 @@ app.set('view engine', 'html');
 app.use(express.static('public'));
 
 // get route and render the view 
-app.use('/', require('./route/root-route'))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:true }));
+app.use('/', require('./route/root-route'));
 
 app.set('port', process.env.PORT || 8080);
 var server = app.listen(app.get('port'), () => {
