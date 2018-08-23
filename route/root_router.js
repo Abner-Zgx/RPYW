@@ -3,9 +3,9 @@ var app = express();
 var router = express.Router();
 
 // load web
-router.use('/', require(cerberus.route.web_route));
+router.use('/', require(cerberus.route.web_router));
 
 // request
-router.post('/login', require('../connection/test.js'));
+router.post('/authenticate', require(cerberus.utility.authenticate));
 
 module.exports = router

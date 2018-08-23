@@ -3,11 +3,13 @@ const path = require("path")
 
 
 global.cerberus = {
-    route: {}
+    route: {},
+    utility: {}
 }
 
 
 setGlobal(cerberus.route, path.join(base_dir, "route"))
+setGlobal(cerberus.utility, path.join(base_dir, "utility"))
 
 function setGlobal(param, filePath) {
     fs.readdirSync(filePath).filter(file => {

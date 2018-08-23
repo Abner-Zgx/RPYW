@@ -6,15 +6,6 @@ const Sequelize = require('sequelize');
 
 var sequelize = new Sequelize('mysql://root:root@localhost:3306/RPYW');
 
-// sequelize
-//   .authenticate()
-//   .then(() => {
-//     console.log('Connection has been established successfully.');
-//   })
-//   .catch(err => {
-//     console.error('Unable to connect to the database:', err);
-//   });
-
 router.post('/login', function(req, res){
 
   var param = req.body
@@ -42,18 +33,27 @@ router.post('/login', function(req, res){
   
   User.findAll({
     where: {
-      email: email
+      email: email,
+      password: password
     }
   })
   .then(result => {
-    var user = result[0].dataValues;
-    if (user.password == password) {
-      var msg = {
-        "code": 200,
-        "tip": "success"
-      }
-      return msg;
+
+    var userInfo = result[0].dataValues;
+    if (userInfo) {
+      res.json({
+        "userInfo": userInfo,
+        "code": "200",
+        "msg": "success"
+      });
+    }else {
+      res.json({
+        "code": "-1",
+        "msg": "error"
+      });
     }
+
+    
   })
 
 });

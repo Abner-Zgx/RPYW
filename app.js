@@ -12,7 +12,7 @@ require('dotenv').config(); // use env
 global.base_dir = __dirname;
 
 // require the configure of file path
-require('./conf/path_conf.js')
+require('./config/path_conf.js')
 
 var app = express();
 
@@ -79,10 +79,12 @@ app.set('view engine', 'html');
 // find the static sources
 app.use(express.static('public'));
 
-// get route and render the view 
+// get param by req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', require(cerberus.route.root_route));
+
+// get route and render the view 
+app.use('/', require(cerberus.route.root_router));
 
 // //开发环境错误处理
 // // will print stacktrace

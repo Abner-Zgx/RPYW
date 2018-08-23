@@ -28,7 +28,7 @@ var self = {
 		}
 
 		$.ajax({
-			url: "/login",
+			url: "/authenticate",
 			type: "post",
 			data: data,
 			success: function(result) {
@@ -36,6 +36,7 @@ var self = {
 			},
 			error: function(err) {
 				console.log(err);
+				window.location.href = "http://localhost:8080";
 			}		
 		})
 	}	

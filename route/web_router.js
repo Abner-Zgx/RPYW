@@ -3,7 +3,7 @@ var app = express();
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    res.redirect(process.env.PROJECT_URL+'/login')
+    res.redirect(process.env.PROJECT_URL+'/login');
 });
 
 router.get('/login', (req, res) => {
