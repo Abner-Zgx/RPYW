@@ -4,20 +4,24 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
-
 require('dotenv').config(); // use env
 
 // difine global constant
 global.base_dir = __dirname;
 
 // require the configure of file path
-require('./config/path_conf.js')
+require('./configs/path_conf.js')
 
 var app = express();
 
-//添加setLocale中间件，注意必须在配置session之后
+// get req with cookie
 app.use(cookieParser());
+// get param by req.body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// 添加setLocale中间件，注意必须在配置session之后
 app.use(setLocale);
 
 // 定义setLocale中间件
@@ -49,21 +53,6 @@ function setLocale(req, res, next){
   next();
 };
 
-
-// // i18n
-// i18n.configure({
-//     locales: ['en', 'zh'],  // setup some locales - other locales default to en silently
-//     defaultLocale: 'zh',
-//     directory: './i18n',
-//     updateFiles: false,
-//     indent: "\t",
-//     extension: '.json'
-// });
-
-// i18n.setLocale('en');
-// i18n.init();
-// console.log(i18n);
-
 // specify a default enging - hbs (with i18n)
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', exphbs({
@@ -79,34 +68,34 @@ app.set('view engine', 'html');
 // find the static sources
 app.use(express.static('public'));
 
-// get param by req.body
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// load database
+const dbUtil = require(cerberus.utils.dbUtil);
+cerberus.dbPool = dbUtil.loadDB(process.env.MYSQL_URL);
 
 // get route and render the view 
-app.use('/', require(cerberus.route.root_router));
+app.use('/', require(cerberus.routes.root_router));
 
-// //开发环境错误处理
-// // will print stacktrace
-// if (app.get('env') === 'development') {
-//     app.use(function (err, req, res, next) {
-//         res.status(err.status || 500);
-//         res.render('error', {
-//             message: err.message,
-//             error: err
-//         });
-//     });
-// }
+//开发环境错误处理
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
 
-// //生产环境错误处理
-// // no stacktraces leaked to user
-// app.use(function (err, req, res, next) {
-//     res.status(err.status || 500);
-//     res.render('error', {
-//         message: err.message,
-//         error: {}
-//     });
-// });
+//生产环境错误处理
+// no stacktraces leaked to user
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
+});
 
 app.set('port', process.env.PORT || 8080);
 var server = app.listen(app.get('port'), () => {

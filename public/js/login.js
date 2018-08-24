@@ -32,14 +32,25 @@ var self = {
 			type: "post",
 			data: data,
 			success: function(result) {
-				console.log(result);
+				if (result.code == 0){
+					self.success(result);
+				}else {
+					self.failure("帐号密码错误！");
+				}
 			},
 			error: function(err) {
-				console.log(err);
-				window.location.href = "http://localhost:8080";
+				self.failure(err);
 			}		
 		})
-	}	
+	},
+
+	success: function(result) {
+		window.location.href = "/RPYW"
+	},
+
+	failure: function(err) {
+		alert("登陆失败:" + err);
+	},
 };
 
 self.init();

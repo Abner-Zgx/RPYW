@@ -17,9 +17,12 @@ var jwtUtil = {
 
     // encrypt the payload
     encrypt: function(payload) {
-        jwt.sign(payload, secret, { algorithm: algorithm }, (err, token) => {
-
-        });
+        try {
+            return jwt.sign(payload, secret, { algorithm: algorithm });
+        } catch(err) {
+            console.log(err);
+            return null;
+        }
     }
 
 }
