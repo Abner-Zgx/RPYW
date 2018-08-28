@@ -15,8 +15,22 @@
 
 </head>
 
+<script>
+
+</script>
+
 <body class="my-login-page">
 	<section class="h-100">
+
+		<!-- Modal -->
+		<div class="modal fade" id="alertModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index: 9999">
+			<div class="modal-dialog" role="document">
+				<div class="alert alert-success" role="alert">
+					<h4 class="alert-heading text-center">{{__ 'Login Error'}}</h4>
+					<p id="alertContentId" class="text-center"></p>
+				</div>
+			</div>
+		</div>
 
 		<div class="dropdown show" style="padding: 20px; position: absolute; right: 0px">
 			<a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -32,7 +46,7 @@
 
 		<div class="container h-100">
 			<div class="row justify-content-md-center h-100">
-				<div class="card-wrapper">
+				<div class="card-wrapper col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-4 col-xs-10 col-xs-offset-5 container col-center-block">
 					<div class="brand">
 						<img src="img/logo.png">
 					</div>
@@ -40,7 +54,6 @@
 						<div class="card-body">
 							<h4 class="card-title text-center">{{__ 'Login'}}</h4>
 							<form>
-
 								<div class="form-group">
 									<label for="email">{{__ 'E-Mail Address'}}</label>
 

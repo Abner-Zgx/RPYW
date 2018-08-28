@@ -11,10 +11,10 @@ var self = {
             if (result.length == 0) {
                 throw new Error("Incorrect email or password!");
             }else {
-                var jwtObj = result[0].dataValues;
-                jwt = jwtUtil.encrypt(jwtObj);
-                jwtObj.jwt = jwt;
-                return jwtObj
+                var payload = result[0].dataValues;
+                jwt = jwtUtil.encrypt(payload);
+                payload.jwt = jwt;
+                return payload;
             }
         });
     }

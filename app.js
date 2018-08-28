@@ -35,7 +35,7 @@ function setLocale(req, res, next){
     directory: __dirname + '/i18n',  //翻译json文件的路径
     defaultLocale: 'zh',   //默认的语言，即为上述标准4
     indent: "\t",
-    //extension: '.js' // 由于 JSON 不允许注释，所以用 js 会方便一点，也可以写成其他的，不过文件格式是 JSON
+    // extension: '.json' // 由于 JSON 不允许注释，所以用 js 会方便一点，也可以写成其他的，不过文件格式是 JSON
   });
 
  //客户端可以通过修改cookie进行语言切换控制
@@ -75,27 +75,27 @@ cerberus.dbPool = dbUtil.loadDB(process.env.MYSQL_URL);
 // get route and render the view 
 app.use('/', require(cerberus.routes.root_router));
 
-//开发环境错误处理
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
+// //开发环境错误处理
+// // will print stacktrace
+// if (app.get('env') === 'development') {
+//     app.use(function (err, req, res, next) {
+//         res.status(err.status || 500);
+//         res.render('error', {
+//             message: err.message,
+//             error: err
+//         });
+//     });
+// }
 
-//生产环境错误处理
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
+// //生产环境错误处理
+// // no stacktraces leaked to user
+// app.use(function (err, req, res, next) {
+//     res.status(err.status || 500);
+//     res.render('error', {
+//         message: err.message,
+//         error: {}
+//     });
+// });
 
 app.set('port', process.env.PORT || 8080);
 var server = app.listen(app.get('port'), () => {

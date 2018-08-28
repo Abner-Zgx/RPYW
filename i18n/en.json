@@ -13,5 +13,7 @@
 	"Register": "Register",
 	"Name": "Name",
 	"Terms and Conditions": "I agree to the Terms and Conditions",
-	"Already have an account": "Already have an account"
+	"Already have an account": "Already have an account",
+	"Login Error": "Login Error",
+    "Email or Password is Error": "Email or Password is Error"
 }
