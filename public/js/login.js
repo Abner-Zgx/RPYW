@@ -56,7 +56,7 @@ var self = {
 		}
 
 		$.ajax({
-			url: "/authenticate",
+			url: "authenticate",
 			type: "post",
 			data: data,
 			success: function (result) {

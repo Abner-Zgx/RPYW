@@ -4,10 +4,6 @@ var router = express.Router();
 const responseRender = require(cerberus.filters.responseRender);
 
 router.get('/', (req, res) => {
-    res.redirect(process.env.PROJECT_URL + '/RPYW');
-});
-
-router.get('/RPYW', (req, res) => {
     responseRender(res);
 });
 

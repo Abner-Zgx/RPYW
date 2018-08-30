@@ -18,7 +18,7 @@ var self = function(res){
         }
     })
     .catch(err => {
-        res.redirect(process.env.PROJECT_URL + '/login');
+        res.redirect(process.env.PROJECT_ROOT + '/login');
     });
 
 }
