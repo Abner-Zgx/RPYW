@@ -1,13 +1,5 @@
 @charset "UTF-8";
-/**
-Dashboard UI
- */
-/*!
- * Bootstrap v4.0.0 (https://getbootstrap.com)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+
 :root {
   --blue: #467fcf;
   --indigo: #6574cd;
@@ -567,7 +559,7 @@ pre code {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
@@ -589,7 +581,7 @@ pre code {
   .container {
     max-width: 1200px;
   }
-}
+} */
 
 .container-fluid {
   width: 100%;
