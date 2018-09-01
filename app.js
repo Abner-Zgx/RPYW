@@ -21,7 +21,6 @@ app.use(bodyParser.json()); // get param by req.body
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /* i18n */
-
 app.use(setLocale); // 注意必须在配置session之后
 function setLocale(req, res, next) { // 定义setLocale中间件
   var locale;

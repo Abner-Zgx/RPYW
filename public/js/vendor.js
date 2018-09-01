@@ -26,13 +26,38 @@ var vendors = [
 ];
 
 $(function(){
-    $('#vendorTable').DataTable({
-        data: vendors,
-        columns: [
-            { data: 'id' },
-            { data: 'vendor' },
-            { data: 'contact' },
-            { data: 'email' },
-        ]
-    });
+
+    var self = {
+        init(){
+            this.addEvent();
+        },
+        addEvent(){
+            this.loadTableData();
+        },
+        loadTableData() {
+            var languageURL;
+            if ($.cookie("locale") == "zh") {
+                languageURL = "//cdn.datatables.net/plug-ins/1.10.19/i18n/Chinese.json"
+            } else if ($.cookie("locale") == "en") {
+                languageURL = "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
+            } else {
+                languageURL = "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
+            }
+            $("#vendorTable").DataTable({
+                data: vendors,
+                language: {
+                    url: languageURL
+                },
+                columns: [
+                    { data: "id" },
+                    { data: "vendor" },
+                    { data: "contact" },
+                    { data: "email" },
+                ]
+            });
+        }
+    }
+    
+    self.init();
+
 })

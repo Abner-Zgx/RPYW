@@ -1,6 +1,7 @@
 var self = {
 	init: function () {
 		this.addEvent();
+		$.cookie("locale", "zh");
 	},
 
 	addEvent: function () {
@@ -9,16 +10,16 @@ var self = {
 
 		// set locale
 		$("#zh-btn").bind("click", () => {
-			$.cookie('locale', 'zh');
+			$.cookie("locale", "zh");
 		});
 		$("#en-btn").bind("click", () => {
-			$.cookie('locale', 'en');
+			$.cookie("locale", "en");
 		});
 
 		// custom alert
 		window.alert = function (msg) {
 			$("#alertContentId").html(msg);
-			$("#alertModalId").modal('show');
+			$("#alertModalId").modal("show");
 		};
 	},
 
