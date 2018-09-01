@@ -2,7 +2,7 @@ const jwtUtil = require(cerberus.utils.jwtUtil);
 const express = require("express");
 const router = express.Router();
 
-var self = function(res){
+var self = function(res, targetPage){
     var token = res.req.cookies["jwt-cerberus"]
     var payload = jwtUtil.verify(token);
 
@@ -15,7 +15,7 @@ var self = function(res){
             options.layout = "layout"
             options.redirect = true
             options.env = process.env;
-            res.render("home",options);
+            res.render(targetPage,options);
         }
     })
     .catch(err => {

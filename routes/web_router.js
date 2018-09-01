@@ -4,7 +4,7 @@ var router = express.Router();
 const responseRender = require(cerberus.filters.responseRender);
 
 router.get('/', (req, res) => {
-    responseRender(res);
+    responseRender(res, "home");
 });
 
 router.get('/login', (req, res) => {
@@ -21,6 +21,10 @@ router.get('/register', (req, res) => {
 
 router.get('/reset', (req, res) => {
     res.render('reset');
+});
+
+router.get('/vendor', (req, res) => {
+    responseRender(res, "vendor");
 });
 
 module.exports = router

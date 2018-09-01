@@ -7,20 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script>
         window.__cerberus__ = {
-            PROJECT: "{{env.PROJECT}}"
+            PROJECT_URL: "{{env.PROJECT_URL}}"
         }
     </script>
-    <link rel="icon" type="image/x-icon" href="{{env.PROJECT}}/img/me.png" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{env.PROJECT}}/img/me.png" />
-    <link href="{{env.PROJECT}}/css/dashboard.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{env.PROJECT}}/css/layout.css">
+    <link rel="icon" type="image/x-icon" href="{{env.PROJECT_URL}}/img/me.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{env.PROJECT_URL}}/img/me.png" />
+    <link href="{{env.PROJECT_URL}}/css/dashboard.css" rel="stylesheet" />
 
-    <script src="{{env.PROJECT}}/js/jquery.min.js"></script>
-    <script src="{{env.PROJECT}}/js/jquery.cookie.js"></script>
+    <!-- Jquery -->
+    <script src="{{env.PROJECT_URL}}/js/jquery.min.js"></script>
+    <script src="{{env.PROJECT_URL}}/js/jquery.cookie.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
-    <script src="{{env.PROJECT}}/js/bootstrap/bootstrap.min.js"></script>   
-    <script src="{{env.PROJECT}}/js/layout.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{env.PROJECT_URL}}/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Layout -->
+    <link rel="stylesheet" href="{{env.PROJECT_URL}}/css/layout.css">
+    <script src="{{env.PROJECT_URL}}/js/layout.js"></script>
 
     <title>{{__ 'Company Name'}}</title>
 </head>
@@ -32,19 +42,19 @@
             <div class="d-flex">
                 <!-- logo -->
                 <a class="navbar-brand">
-                    <img src="{{env.PROJECT}}/img/tabler.svg" class="navbar-brand-img" alt="tabler.io">
+                    <img src="{{env.PROJECT_URL}}/img/tabler.svg" class="navbar-brand-img" alt="tabler.io">
                 </a>
                 <div class="ml-auto d-flex order-lg-2">
                     <div class="dropdown">
                         <a class="nav-link pr-0" data-toggle="dropdown">
-                            <span class="avatar" style="background-image: url(RPYW/img/me.png)"></span>
+                            <span class="avatar" style="background-image: url({{env.PROJECT_URL}}/img/me.png)"></span>
                             <span class="ml-2 d-lg-block">
                                 <span class="text-default">Abner</span>
                                 <small class="text-muted d-block mt-1">Administrator</small>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                            <a class="dropdown-item" id="signOut">{{__ 'Sign out'}}</a>
+                            <a class="dropdown-item" id="signOut">{{__ 'Sign Out'}}</a>
                         </div>
                     </div>
                 </div>
@@ -59,15 +69,10 @@
                 <div class="col">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a href="{{env.PROJECT}}" class="nav-link active"><i class="fe fe-home"></i>{{__ 'Home'}}</a>
+                            <a href="{{env.PROJECT_URL}}" class="nav-link active"><i class="fe fe-home"></i>{{__ 'Home'}}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link"><i class="fe fe-box"></i>{{__ 'Vendors'}}</a>
-                            <div class="nav-submenu nav">
-                                <a href="./cards.html" class="nav-item ">Cards design</a>
-                                <a href="./charts.html" class="nav-item ">Charts</a>
-                                <a href="./pricing-cards.html" class="nav-item ">Pricing cards</a>
-                            </div>
+                            <a href="{{env.PROJECT_URL}}/vendor" class="nav-link"><i class="fe fe-box"></i>{{__ 'Vendors'}}</a>
                         </li>
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link"><i class="fe fe-calendar"></i>{{__ 'Report'}}</a>
@@ -110,7 +115,7 @@
     <footer class="footer">
         <div class="container">
             <div class="text-center">
-                Copyright © 2018 {{env.PROJECT}} All rights reserved
+                Copyright © 2018 {{__ 'Company Name'}} All rights reserved
             </div>
         </div>
     </footer>
