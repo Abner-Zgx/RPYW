@@ -2,6 +2,7 @@
 	"Language": "Language",
 	"Company Name": "荣浦印务",
 	"Login": "登录",
+	"Sign Out": "登出",
 	"E-Mail Address": "邮箱",
 	"Password": "密码",
 	"Forgot Password": "忘记密码",
@@ -17,5 +18,8 @@
 	"Login Error": "登录失败",
 	"Email or Password is Error": "账号或密码错误",
 	"Home": "首页",
-	"Vendors": "供应商"
+	"Vendors": "供应商",
+	"Report": "报告",
+	"Admin": "管理",
+	"Sign out": "Sign out"
 }

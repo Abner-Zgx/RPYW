@@ -14,6 +14,7 @@ var self = function(res){
             var options = {};
             options.layout = "layout"
             options.redirect = true
+            options.env = process.env;
             res.render("home",options);
         }
     })

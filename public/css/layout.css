@@ -15,13 +15,19 @@ flex-shrink：如果空间不足，元素的收缩比率
 flex-basis：元素的伸缩基准值
 */
 
-header{
+.header {
     /* 我们希望 header 采用固定的高度，只占用必须的空间 */
     /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
     flex: 0 0 auto;
 }
 
-.page-content{
+.header-nav {
+    /* 我们希望 header 采用固定的高度，只占用必须的空间 */
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+}
+
+.page-content {
     /* 将 flex-grow 设置为1，该元素会占用全部可使用空间 
        而其他元素该属性值为0，因此不会得到多余的空间*/
     /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
@@ -30,4 +36,8 @@ header{
 
 .footer {
     flex: 0 0 auto;
+}
+
+.nav-item {
+    margin-left: 10px;
 }

@@ -358,7 +358,7 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.66em;
+  /* margin-bottom: 0.66em; */
   font-family: inherit;
   font-weight: 600;
   line-height: 1.1;
@@ -366,7 +366,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 h2, .h2 {
@@ -7323,7 +7323,7 @@ button.bg-dark:focus {
 }
 
 .m-0 {
-  margin: 0 !important;
+  margin-top: 20px !important;
 }
 
 .mt-0,
@@ -11532,7 +11532,7 @@ a.icon:hover {
 }
 
 .nav-tabs .nav-item + .nav-item {
-  margin-left: 1.25rem;
+  margin-left: 3rem !important;
 }
 
 .nav-tabs .nav-item:hover .nav-submenu {
@@ -17393,9 +17393,9 @@ svg {
 
 @font-face {
   font-family: "feather";
-  src: url("../fonts/feather/feather-webfont.eot?t=1501841394106");
+  src: url("./fonts/feather/feather-webfont.eot?t=1501841394106");
   /* IE9*/
-  src: url("../fonts/feather/feather-webfont.eot?t=1501841394106#iefix") format("embedded-opentype"), url("../fonts/feather/feather-webfont.woff?t=1501841394106") format("woff"), url("../fonts/feather/feather-webfont.ttf?t=1501841394106") format("truetype"), url("../fonts/feather/feather-webfont.svg?t=1501841394106#feather") format("svg");
+  src: url("./fonts/feather/feather-webfont.eot?t=1501841394106#iefix") format("embedded-opentype"), url("./fonts/feather/feather-webfont.woff?t=1501841394106") format("woff"), url("./fonts/feather/feather-webfont.ttf?t=1501841394106") format("truetype"), url("./fonts/feather/feather-webfont.svg?t=1501841394106#feather") format("svg");
   /* iOS 4.1- */
 }
 

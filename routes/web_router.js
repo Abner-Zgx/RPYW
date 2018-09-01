@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', {env: process.env});
 });
 
 router.get('/forgot', (req, res) => {

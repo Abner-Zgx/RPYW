@@ -10,15 +10,15 @@ shim: {
 },
 paths: {
 'core': 'js/core',
-'jquery': 'js/jquery-3.2.1.min',
+// 'jquery': 'js/jquery-3.2.1.min',
 'bootstrap': 'js/bootstrap.bundle.min',
-'sparkline': 'js/jquery.sparkline.min',
-'selectize': 'js/selectize.min',
-'tablesorter': 'js/jquery.tablesorter.min',
-'vector-map': 'js/jquery-jvectormap-2.0.3.min',
-'vector-map-de': 'js/jquery-jvectormap-de-merc',
-'vector-map-world': 'js/jquery-jvectormap-world-mill',
-'circle-progress': 'js/circle-progress.min',
+// 'sparkline': 'js/jquery.sparkline.min',
+// 'selectize': 'js/selectize.min',
+// 'tablesorter': 'js/jquery.tablesorter.min',
+// 'vector-map': 'js/jquery-jvectormap-2.0.3.min',
+// 'vector-map-de': 'js/jquery-jvectormap-de-merc',
+// 'vector-map-world': 'js/jquery-jvectormap-world-mill',
+// 'circle-progress': 'js/circle-progress.min',
 }
 });
 window.tabler = {
