@@ -27,4 +27,8 @@ router.get('/vendor', (req, res) => {
     responseRender(res, "vendor");
 });
 
+router.get('/email', (req, res) => {
+    responseRender(res, "email");
+});
+
 module.exports = router
